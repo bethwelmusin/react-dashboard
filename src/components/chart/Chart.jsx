@@ -1,53 +1,80 @@
 import "./chart.scss";
 import {
-  AreaChart,
-  Area,
-  XAxis,
-  CartesianGrid,
-  Tooltip,
+  LineChart,
   ResponsiveContainer,
-} from "recharts";
+  Legend, Tooltip,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid
+} from 'recharts';
 
-const data = [
-  { name: "January", Total: 1200 },
-  { name: "February", Total: 2100 },
-  { name: "March", Total: 800 },
-  { name: "April", Total: 1600 },
-  { name: "May", Total: 900 },
-  { name: "June", Total: 1700 },
+
+
+
+const pdata = [
+  {
+      name: '1',
+      completed: 11,
+      incoming: 120,
+      pending:23
+  },
+  {
+      name: '2',
+      completed: 15,
+      incoming: 12,
+      pending:12
+  },
+  {
+      name: '3',
+      completed: 5,
+      incoming: 10,
+      pending:12
+  },
+  {
+      name: '4',
+      completed: 10,
+      incoming: 5,
+      pending:8
+  },
+  {
+      name: '5',
+      completed: 9,
+      incoming: 4,
+      pending:39
+  },
+  {
+      name: '6',
+      completed: 10,
+      incoming: 8,
+      pending:19
+  },
 ];
 
-const Chart = ({ aspect, title }) => {
+const Chart = () => {
   return (
     <div className="chart">
-      <div className="title">{title}</div>
-      <ResponsiveContainer width="100%" aspect={aspect}>
-        <AreaChart
-          width={730}
-          height={250}
-          data={data}
-          margin={{ top: 10, right: 30, left: 0, bottom: 0 }}
-        >
-          <defs>
-            <linearGradient id="total" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8} />
-              <stop offset="95%" stopColor="#8884d8" stopOpacity={0} />
-            </linearGradient>
-          </defs>
-          <XAxis dataKey="name" stroke="gray" />
-          <CartesianGrid strokeDasharray="3 3" className="chartGrid" />
-          <Tooltip />
-          <Area
-            type="monotone"
-            dataKey="Total"
-            stroke="#8884d8"
-            fillOpacity={1}
-            fill="url(#total)"
-          />
-        </AreaChart>
-      </ResponsiveContainer>
+        <h2 className="text-heading">
+            Orders
+        </h2>
+        <ResponsiveContainer width="100%" aspect={2 /1}>
+            <LineChart data={pdata} margin={{ right: 300 }}>
+                <CartesianGrid />
+                <XAxis dataKey="name" 
+                    interval={'preserveStartEnd'} />
+                <YAxis></YAxis>
+                <Legend />
+                <Tooltip />
+                <Line dataKey="completed"
+                    stroke="blue" activeDot={{ r: 8 }} />
+                <Line dataKey="incoming"
+                    stroke="red" activeDot={{ r: 8 }} />
+                <Line dataKey="pending"
+                    stroke="orange" activeDot={{ r: 8 }} />
+            </LineChart>
+        </ResponsiveContainer>
     </div>
-  );
+  )
 };
 
 export default Chart;

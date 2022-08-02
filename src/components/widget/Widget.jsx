@@ -1,16 +1,25 @@
 import "./widget.scss";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-// import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
+import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 // import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
 // import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 // import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
 
-const Widget = ({ type }) => {
+const Widget = () => {
+
+  // const data = {
+  //   "title":orders,
+  //   "Amount":34999,
+  //   "link":,
+  //   "icon":;
+
+  
+  // }
   // let data;
 
   // //temporary
   // const amount = 100;
-  const diff = 20;
+  // const diff = 20;
 
   // switch (type) {
   //   case "user":
@@ -84,16 +93,15 @@ const Widget = ({ type }) => {
         <span className="title">Total orders</span>
         <span className="counter">
           3400$
-          {/* {data.isMoney && "$"} {amount} */}
         </span>
         <span  className="link">view total earnings</span>
       </div>
       <div className="right">
         <div className="percentage positive">
           <KeyboardArrowUpIcon />
-          {diff} %
+          20%
         </div>
-        {/* {data.icon} */}
+      <PersonOutlinedIcon className="icon" />
       </div>
      </div>
 
