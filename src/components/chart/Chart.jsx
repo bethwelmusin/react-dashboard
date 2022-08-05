@@ -45,10 +45,41 @@ const pdata = [
   },
   {
       name: '6',
-      completed: 10,
-      incoming: 8,
-      pending:19
+      completed: 15,
+      incoming: 83,
+      pending:45
   },
+  {
+    name: '7',
+    completed: 12,
+    incoming: 0,
+    pending:23
+},
+{
+    name: '8',
+    completed: 54,
+    incoming: 18,
+    pending:23,
+       
+},
+{
+    name: '9',
+    completed: 50,
+    incoming: 18,
+    pending:19,
+},
+{
+    name: '10',
+    completed: 30,
+    incoming: 6,
+    pending:27,
+},
+    { 
+    name: '11',
+    completed: 40,
+    incoming: 7,
+    pending:32
+    },
 ];
 
 const Chart = () => {
@@ -57,7 +88,7 @@ const Chart = () => {
         <h2 className="text-heading">
             Orders
         </h2>
-        <ResponsiveContainer width="100%" aspect={2 /1}>
+        <ResponsiveContainer width="100%" aspect={3 /1}>
             <LineChart data={pdata} margin={{ right: 300 }}>
                 <CartesianGrid />
                 <XAxis dataKey="name" 

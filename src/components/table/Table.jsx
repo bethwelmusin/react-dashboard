@@ -6,58 +6,49 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+// import beef from "../../images/beef.jpg";
 
 const List = () => {
   const rows = [
     {
-      id: 1143155,
-      product: "Acer Nitro 5",
-      img: "https://m.media-amazon.com/images/I/81bc8mA3nKL._AC_UY327_FMwebp_QL65_.jpg",
-      customer: "John Smith",
-      date: "1 March",
-      amount: 785,
-      method: "Cash on Delivery",
-      status: "Approved",
+      img: "https://upload.wikimedia.org/wikipedia/commons/a/a3/Eq_it-na_pizza-margherita_sep2005_sml.jpg",
+      fooditem: "pizza ",
+      category: "Lunch",
+      orders: "1234",
+      sales: "43%",
+      
     },
     {
-      id: 2235235,
-      product: "Playstation 5",
-      img: "https://m.media-amazon.com/images/I/31JaiPXYI8L._AC_UY327_FMwebp_QL65_.jpg",
-      customer: "Michael Doe",
-      date: "1 March",
-      amount: 900,
-      method: "Online Payment",
-      status: "Pending",
+      img: "https://media.istockphoto.com/photos/juicy-hamburger-on-white-background-picture-id1206323282?k=20&m=1206323282&s=612x612&w=0&h=yatlq6BHRCCvoTzFZLSwaJc0O8Quct_tRPWtH0dj9Fc=",
+      fooditem: "burger ",
+      category: "Lunch",
+      orders: "1234",
+      sales: "13%",
+      
     },
     {
-      id: 2342353,
-      product: "Redragon S101",
-      img: "https://m.media-amazon.com/images/I/71kr3WAj1FL._AC_UY327_FMwebp_QL65_.jpg",
-      customer: "John Smith",
-      date: "1 March",
-      amount: 35,
-      method: "Cash on Delivery",
-      status: "Pending",
+      img: "https://s23209.pcdn.co/wp-content/uploads/2020/03/Best-Ever-Beef-StewIMG_1367.jpg",
+      fooditem: "beef stew ",
+      category: "supper",
+      orders: "12",
+      sales: "33%",
+      
     },
     {
-      id: 2357741,
-      product: "Razer Blade 15",
-      img: "https://m.media-amazon.com/images/I/71wF7YDIQkL._AC_UY327_FMwebp_QL65_.jpg",
-      customer: "Jane Smith",
-      date: "1 March",
-      amount: 920,
-      method: "Online",
-      status: "Approved",
+      img: "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1024-512,f_auto,q_auto:best/newscms/2019_33/2203981/171026-better-coffee-boost-se-329p.jpg",
+      fooditem: "coffee ",
+      category: "breakfast",
+      orders: "56",
+      sales: "23%",
+      
     },
     {
-      id: 2342355,
-      product: "ASUS ROG Strix",
-      img: "https://m.media-amazon.com/images/I/81hH5vK-MCL._AC_UY327_FMwebp_QL65_.jpg",
-      customer: "Harold Carol",
-      date: "1 March",
-      amount: 2000,
-      method: "Online",
-      status: "Pending",
+      img: "https://upload.wikimedia.org/wikipedia/commons/4/48/Ugali_%26_Sukuma_Wiki.jpg",
+      fooditem: "ugali skuma ",
+      category: "supper",
+      orders: "124",
+      sales: "13%",
+      
     },
   ];
   return (
@@ -65,31 +56,29 @@ const List = () => {
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell className="tableCell">Tracking ID</TableCell>
-            <TableCell className="tableCell">Product</TableCell>
-            <TableCell className="tableCell">Customer</TableCell>
-            <TableCell className="tableCell">Date</TableCell>
-            <TableCell className="tableCell">Amount</TableCell>
-            <TableCell className="tableCell">Payment Method</TableCell>
-            <TableCell className="tableCell">Status</TableCell>
+            <TableCell className="tableCell"> Image</TableCell>
+            <TableCell className="tableCell">fooditem</TableCell>
+            <TableCell className="tableCell">category</TableCell>
+            <TableCell className="tableCell">orders</TableCell>
+            <TableCell className="tableCell">sales</TableCell>
+            
           </TableRow>
         </TableHead>
         <TableBody>
           {rows.map((row) => (
-            <TableRow key={row.id}>
-              <TableCell className="tableCell">{row.id}</TableCell>
+            <TableRow >
               <TableCell className="tableCell">
                 <div className="cellWrapper">
                   <img src={row.img} alt="" className="image" />
-                  {row.product}
+                  {row.fooditem}
                 </div>
               </TableCell>
-              <TableCell className="tableCell">{row.customer}</TableCell>
-              <TableCell className="tableCell">{row.date}</TableCell>
-              <TableCell className="tableCell">{row.amount}</TableCell>
-              <TableCell className="tableCell">{row.method}</TableCell>
+              <TableCell className="tableCell">{row.fooditem}</TableCell>
+              <TableCell className="tableCell">{row.category}</TableCell>
+              <TableCell className="tableCell">{row.orders}</TableCell>
+              <TableCell className="tableCell">{row.sales}</TableCell>
               <TableCell className="tableCell">
-                <span className={`status ${row.status}`}>{row.status}</span>
+                
               </TableCell>
             </TableRow>
           ))}
